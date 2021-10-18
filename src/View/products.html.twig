@@ -1,13 +1,12 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>Bonjour</title>
-</head>
+{% extends "layout.html.twig" %}
 
-<body>
+{% block title%}
+    {{parent()}} - Products
+{% endblock %}
+
+{% block content %}
+
+    {% include 'component/_navbar.html.twig' %}
 
     <div> {# open first div #}
         {% for product in products %}
@@ -20,6 +19,7 @@
                 </div><div>
             {% endif %}
         {% endfor %}
-    </div>   {# end last div #}
-</body>
-</html>
+
+    {% include 'component/_footer.html.twig' %}
+
+{% endblock %}
