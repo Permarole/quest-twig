@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Bonjour</title>
+</head>
+
+<body>
+
+    <div> {# open first div #}
+        {% for product in products %}
+            <span>
+                {{ product }}
+            </span>
+
+            {% if loop.index is divisible by(3) %}
+            {# close div and create a new one #}
+                </div><div>
+            {% endif %}
+        {% endfor %}
+    </div>   {# end last div #}
+</body>
+</html>
